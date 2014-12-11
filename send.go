@@ -1,9 +1,10 @@
 package main
 
 import (
-	"github.com/andybons/hipchat"
 	"log"
 	"time"
+
+	"github.com/andybons/hipchat"
 )
 
 const (
@@ -27,8 +28,9 @@ func SendMessage(msg string, config Config) {
 		err := c.PostMessage(request)
 		if err != nil {
 			errc <- err
+		} else {
+			okc <- true
 		}
-		okc <- true
 	}()
 
 	select {
