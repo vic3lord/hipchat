@@ -5,13 +5,13 @@ import (
 	"log"
 )
 
-func SendMessage(msg string) {
-	c := hipchat.Client{AuthToken: *token}
+func SendMessage(msg string, config Config) {
+	c := hipchat.Client{AuthToken: config.Token}
 	request := hipchat.MessageRequest{
-		RoomId:        *room,
-		From:          *from,
+		RoomId:        config.Room,
+		From:          config.From,
 		Message:       msg,
-		Color:         hipchat.ColorYellow,
+		Color:         hipchat.ColorPurple,
 		MessageFormat: hipchat.FormatText,
 		Notify:        true,
 	}
