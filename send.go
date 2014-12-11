@@ -35,6 +35,7 @@ func SendMessage(msg string, config Config) {
 
 	select {
 	case <-okc:
+		log.Println("Message sent successfully \U0001f604")
 	case err := <-errc:
 		log.Printf("Cannot send message: %s %q", msg, err)
 	case <-time.After(time.Second * timeout):
