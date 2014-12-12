@@ -16,6 +16,7 @@ func ReadConfig(file string) Config {
 	conf, err := ioutil.ReadFile(file)
 	if err != nil {
 		log.Printf("Cannot open config file %s, %q", file, err)
+		return Config{}
 	}
 
 	var confStruct Config
