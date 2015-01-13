@@ -15,13 +15,13 @@ type Config struct {
 func ReadConfig(file string) Config {
 	conf, err := ioutil.ReadFile(file)
 	if err != nil {
-		log.Printf("Cannot open config file %s, %q", file, err)
+		log.Printf("[ERROR] Cannot open config file %s, %q", file, err)
 		return Config{}
 	}
 
 	var confStruct Config
 	if err = json.Unmarshal(conf, &confStruct); err != nil {
-		log.Printf("Error parsing config file %s, %q", file, err)
+		log.Printf("[ERROR] parsing config file %s, %q", file, err)
 	}
 
 	return confStruct
