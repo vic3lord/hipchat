@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"fmt"
 	"io/ioutil"
 	"log"
 )
@@ -25,4 +26,8 @@ func ReadConfig(file string) Config {
 	}
 
 	return confStruct
+}
+
+func PrintConfig(config Config) {
+	fmt.Printf("From: %s\nRoom: %s\nToken: %s\n", config.From, config.Room, config.Token)
 }
