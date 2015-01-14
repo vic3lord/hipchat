@@ -9,11 +9,11 @@ go get github.com/vic3lord/hipchat-msg
 hipchat-msg -help
 ```
 
-## hipchat.json
+## hipchatrc
 
 use hipchat-msg config file instead of command line flags so settings can be persistent
 
-*by default hipchat-msg checks for $HOME/.hipchat.json
+*by default hipchat-msg checks for $HOME/.hipchatrc
 
 ```javascript
 {
