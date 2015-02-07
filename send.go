@@ -11,12 +11,12 @@ const (
 	timeout time.Duration = 2
 )
 
-func SendMessage(msg string, config Config) {
-	c := hipchat.Client{AuthToken: config.Token}
+func SendMessage() {
+	c := hipchat.Client{AuthToken: *token}
 	request := hipchat.MessageRequest{
-		RoomId:        config.Room,
-		From:          config.From,
-		Message:       msg,
+		RoomId:        *room,
+		From:          *from,
+		Message:       *message,
 		Color:         hipchat.ColorPurple,
 		MessageFormat: hipchat.FormatText,
 		Notify:        true,
@@ -37,7 +37,7 @@ func SendMessage(msg string, config Config) {
 	case <-okc:
 		log.Println("[INFO] Message sent successfully \U0001f604")
 	case err := <-errc:
-		log.Printf("[ERROR] Cannot send message: %s %q", msg, err)
+		log.Printf("[ERROR] Cannot send message: %s %q", *message, err)
 	case <-time.After(time.Second * timeout):
 		log.Printf("[ERROR] Timout after %d seconds", timeout)
 	}
