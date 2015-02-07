@@ -13,7 +13,7 @@ hipchat-msg -help
 
 use hipchat-msg config file instead of command line flags so settings can be persistent
 
-*by default hipchat-msg checks for $HOME/.hipchatrc
+*by default hipchat-msg checks for $HOME/.hipchatrc*
 
 ```javascript
 {
