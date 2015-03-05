@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+set -e -x
+
+golint .
+go vet ./...
+go test ./...
+goimports -w .
