@@ -11,12 +11,12 @@ const (
 	timeout time.Duration = 2
 )
 
-func SendMessage() {
-	c := hipchat.Client{AuthToken: *token}
+func SendMessage(token, room, from, msg string) {
+	c := hipchat.Client{AuthToken: token}
 	request := hipchat.MessageRequest{
-		RoomId:        *room,
-		From:          *from,
-		Message:       *message,
+		RoomId:        room,
+		From:          from,
+		Message:       msg,
 		Color:         hipchat.ColorPurple,
 		MessageFormat: hipchat.FormatText,
 		Notify:        true,

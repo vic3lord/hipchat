@@ -25,5 +25,5 @@ func main() {
 	}
 
 	// finally send the message
-	SendMessage()
+	SendMessage(*token, *room, *from, *message)
 }
