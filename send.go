@@ -4,7 +4,7 @@ import (
 	"log"
 	"time"
 
-	"github.com/vic3lord/hipchat-msg/Godeps/_workspace/src/github.com/andybons/hipchat"
+	"github.com/andybons/hipchat"
 )
 
 const (
