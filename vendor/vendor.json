@@ -1,0 +1,11 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"path": "github.com/andybons/hipchat",
+			"revision": "f2867e74f309433df97eb416bb3a73725857de6a",
+			"revisionTime": "2015-10-21T14:59:00-04:00"
+		}
+	]
+}
