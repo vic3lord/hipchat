@@ -1,17 +1,17 @@
-# Hipchat-msg
+# Hipchat
 
 A little tool to send hipchat short messages from command line  
 I use it to send my team a useful links etc. instead of launching hipchat just to send links
 
 ```
-go get github.com/vic3lord/hipchat-msg
+go get github.com/vic3lord/hipchat
 
-hipchat-msg -help
+hipchat -help
 ```
 
 ## hipchatrc
 
-use hipchat-msg config file instead of command line flags so settings can be persistent
+use hipchat config file instead of command line flags so settings can be persistent
 
 *by default hipchat-msg checks for $HOME/.hipchatrc*
 
