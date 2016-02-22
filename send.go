@@ -11,7 +11,7 @@ const (
 	timeout time.Duration = 2
 )
 
-// SendMessage gets config and message params then sends the message to the room
+// SendMessage gets config and message params then sends the message to a room
 func SendMessage(token, room, from, msg string) {
 	c := hipchat.Client{AuthToken: token}
 	request := hipchat.MessageRequest{
