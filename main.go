@@ -16,6 +16,12 @@ type Config struct {
 	Token string `json:"token,omitempty"`
 }
 
+var defaultConfig = Config{
+	Room:  "Roomie room",
+	From:  "root",
+	Token: "this-is-a-token",
+}
+
 var (
 	message     = flag.String("msg", "", "Write the message you want to send")
 	room        = flag.String("room", defaultConfig.Room, "Which room to send the message to")
@@ -24,12 +30,6 @@ var (
 	confFile    = flag.String("config", "$HOME/.hipchatrc", "Config file path")
 	printConfig = flag.Bool("print", false, "Print config")
 )
-
-var defaultConfig = Config{
-	Room:  "Roomie room",
-	From:  "root",
-	Token: "this-is-a-token",
-}
 
 func (config Config) String() string {
 	return fmt.Sprintf("From: %s\nRoom: %s\nToken: %s", config.From, config.Room, config.Token)
