@@ -1,22 +1,20 @@
 package main
 
 import (
-	"log"
+	"fmt"
 	"time"
 
 	"github.com/andybons/hipchat"
 )
 
-const (
-	timeout time.Duration = 2
-)
+const timeout time.Duration = 2
 
 // SendMessage gets config and message params then sends the message to a room
-func SendMessage(token, room, from, msg string) {
-	c := hipchat.Client{AuthToken: token}
+func SendMessage(config Config, msg string) {
+	c := hipchat.Client{AuthToken: config.Token}
 	request := hipchat.MessageRequest{
-		RoomId:        room,
-		From:          from,
+		RoomId:        config.Room,
+		From:          config.From,
 		Message:       msg,
 		Color:         hipchat.ColorPurple,
 		MessageFormat: hipchat.FormatText,
@@ -36,10 +34,10 @@ func SendMessage(token, room, from, msg string) {
 
 	select {
 	case <-okc:
-		log.Println("[INFO] Message sent successfully \U0001f604")
+		fmt.Println("[INFO] Message sent successfully \U0001f604")
 	case err := <-errc:
-		log.Printf("[ERROR] Cannot send message: %s %q", *message, err)
+		fmt.Printf("[ERROR] Cannot send message: %s %q", msg, err)
 	case <-time.After(time.Second * timeout):
-		log.Printf("[ERROR] Timout after %d seconds", timeout)
+		fmt.Printf("[ERROR] Timout after %d seconds", timeout)
 	}
 }

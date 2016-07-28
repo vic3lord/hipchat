@@ -1,0 +1,6 @@
+hash: 4200a40993e1387a90111ece9f30c4f1949b988097ae90ab89647a4ad0020064
+updated: 2016-05-19T15:26:29.705544704+03:00
+imports:
+- name: github.com/andybons/hipchat
+  version: f7c7931ab223911c326f903ca8c363561448ff9a
+devImports: []

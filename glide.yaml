@@ -1,0 +1,3 @@
+package: github.com/vic3lord/hipchat
+import:
+- package: github.com/andybons/hipchat
